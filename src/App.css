@@ -1,0 +1,22 @@
+.montserrat-font {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 1;
+  font-style: normal;
+}
+
+body {
+  background-color: rgb(39, 39, 39);
+}
+
+.topnav {
+  z-index: 1;
+  top: 10px;
+  left: 80px;
+  border: 5px solid #245DDA;
+  background-color: #161616;
+  border-radius: 10px;
+  overflow-x: hidden;
+  padding: 20px 0;
+  
+}
