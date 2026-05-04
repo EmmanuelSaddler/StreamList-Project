@@ -64,9 +64,6 @@ export default function Cart({ cart, setCart }) {
       ))}
 
       <h2 className="cart-total">Total: ${totalPrice.toFixed(2)}</h2>
-      <footer>
-      <p>This web app is a solo dev project. <br></br> Created by Emmanuel Saddler</p>
-      </footer>
     </div>
   );
 }

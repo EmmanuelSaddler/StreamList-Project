@@ -1,18 +1,21 @@
+import { useState, useEffect } from "react";
 import data from "../Data.js";
 
-const [isLoading, setIsLoading] = useState(true);
-
-useEffect(() => {
-  setTimeout(() => {
-    setIsLoading(false);
-  }, 1000);
-}, []);
-
-if (isLoading) {
-  return <p>Loading subscriptions...</p>;
-}
-
 export default function Subscription({ addToCart }) {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer); // cleanup
+  }, []);
+
+  if (isLoading) {
+    return <p style={{ textAlign: "center" }}>Loading subscriptions...</p>;
+  }
+  
   return (
     <div style={{padding: 20}}>
       <h2 className="subscription-title">Available Subscriptions & Accessories</h2>

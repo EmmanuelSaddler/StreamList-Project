@@ -6,14 +6,20 @@ function Addlistbutton({ handleClick }) {
   );
 }
 
-if (!import.meta.env.VITE_TMDB_KEY) {
-  console.error("Missing TMDB API key");
-  return;
-}
-
 export default function Movies({ addItem }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
+
+  const apiKey = import.meta.env.VITE_TMDB_KEY;
+  if (!apiKey) {
+    console.error("Missing TMDB API key");
+    return (
+      <div style={{ textAlign: "center" }}>
+        <h2>Error: Missing TMDB API key</h2>
+        <p>Please set your VITE_TMDB_KEY in .env file</p>
+      </div>
+    );
+  }
 
   const searchMovies = async () => {
     if (!query.trim()) return;
