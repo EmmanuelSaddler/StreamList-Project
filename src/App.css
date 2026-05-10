@@ -100,3 +100,14 @@ footer {
 .content-spacing {
   margin-bottom: 20px;
 }
+
+.cardinfo{
+  float: right;
+  border: 3px solid #245DDA;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  background: #585858;
+  width: 20%;
+  margin-bottom: 20px;
+}

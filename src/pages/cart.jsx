@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Cart({ cart, setCart }) {
 
   const removeItem = (id) => {
@@ -29,6 +31,9 @@ export default function Cart({ cart, setCart }) {
       sum + Number(item.price || 0) * Number(item.quantity || 1),
     0
   );
+
+  const navigate = useNavigate();
+
 
   return (
     <div className="cart-container">
@@ -64,6 +69,8 @@ export default function Cart({ cart, setCart }) {
       ))}
 
       <h2 className="cart-total">Total: ${totalPrice.toFixed(2)}</h2>
+
+      <button className="subscription-button" onClick={() => navigate("/checkout")}>Checkout</button>
     </div>
   );
 }

@@ -9,7 +9,7 @@ export default function Subscription({ addToCart }) {
       setIsLoading(false);
     }, 1000);
 
-    return () => clearTimeout(timer); // cleanup
+    return () => clearTimeout(timer);
   }, []);
 
   if (isLoading) {

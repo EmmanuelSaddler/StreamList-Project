@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import Movies from './pages/movies.jsx'
 import Subscription from './pages/sub.jsx'
 import Cart from './pages/cart.jsx'
+import Login from './pages/login.jsx'
+import Checkout from './pages/checkout.jsx';
 
 function ListItem({ item, deleteItem, toggleComplete, editItem }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -62,10 +64,17 @@ function Home({ items, deleteItem, toggleComplete, editItem }) {
 function About() { 
   return (
     <div style={{textAlign: 'center'}}>
-      <h2>About Us</h2>
-      <p>Coming Soon!
-      <br></br><br></br><br></br><br></br>
-      Movie API Powered by The Movie Database</p>
+      <h1 style={{marginBottom: 50}}>About Us</h1>
+      <h2>Welcome to StreamingBuddy! This is a PWA desigined for your streaming needs!</h2>
+      <p>This app lets you be able to create a list of movies that you want to watch. Powered by The Movie Database, this
+        Application lets you look up movies with keywords and add it to your list that you can check off at any time. This is a great tool
+        to keep yourself organized and keep up with the trends. There is also a functioning shop for merch needs!
+      </p>
+      <br></br><br></br>
+      <h2>Ready for your next popcorn flick? Let StreamingBuddy guide you!</h2>
+      <br></br><br></br>
+      <p>Powered by The Movie Database. This web app is a solo dev project. <br></br> Created by Emmanuel Saddler</p>
+      <img src="public/tmdb.png" alt="The Movie Database Logo"></img>
     </div>
   );
 }
@@ -99,6 +108,8 @@ function TopNav({addItem, cart}) {
       &nbsp;&nbsp;
 
       <SubmitButton handleClick={handleClick} />
+      &nbsp;&nbsp;
+      <Link to="#"onClick={() => {localStorage.removeItem("auth"); window.location.reload();}}>Logout</Link>
     </div>
   );
 }
@@ -111,12 +122,19 @@ function AppRoutes({ addItem, items, deleteItem, toggleComplete, editItem, cart,
       <Route path="/cart" element={<Cart  cart={cart} setCart={setCart}/>} />
       <Route path="/subscription" element={<Subscription addToCart={addToCart}/>} />
       <Route path="/about" element={<About />} />
+      <Route path="/checkout" element={<Checkout cart={cart} setCart={setCart}/>} />
     </Routes>
   );
 }
 
 
 export default function MyApp() {
+
+const isLoggedIn = localStorage.getItem("auth");
+
+if (!isLoggedIn) {
+  return <Login />;
+}
 
 //LocalStorage Stuff
 const [items, setItems] = useState(() => {

@@ -1,6 +1,6 @@
-# Week 4 - StreamingBuddy
+# Week 5 - Final - StreamingBuddy
 
-This week was a Bug Fix Week. No Major changed were applied.
+Welcome to StreamingBuddy! Your one stop shop to help you watch your favroite entertainment!
 
 The API Key to TMDB is not included with this branch, in order to use one make a file called ".env" in the root folder and put
 
@@ -8,3 +8,6 @@ The API Key to TMDB is not included with this branch, in order to use one make a
 
 Without it, you will not be able to use the movies page of the application.
 
+There is a example file in here for you to imput it.
+
+The Google OAuth Client ID is also not included. In order to use it, go to main.jsx
