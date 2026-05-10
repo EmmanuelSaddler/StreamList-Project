@@ -1,16 +1,13 @@
-# React + Vite
+# Week 5 Final Week - StreamingBuddy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to StreamingBuddy! Your one stop shop to help you watch your favroite entertainment!
 
-Currently, two official plugins are available:
+The API Key to TMDB is not included with this branch, in order to use one make a file called ".env" in the root folder and put
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+'VITE_TMDB_KEY=(Insert Key Here)'
 
-## React Compiler
+Without it, you will not be able to use the movies page of the application.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+There is a example file in here for you to imput it.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The Google OAuth Client ID is also not included, in order to add it use your own Client ID and put it in main.jsx
